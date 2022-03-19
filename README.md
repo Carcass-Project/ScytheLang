@@ -9,15 +9,13 @@ It might not be the best idea but it's ok.
 # Mockup
 
 ```
-  package use Scythe::IO::Console
-  
-  fn example(a -> int32, b -> float32) : float32
-  {
-    return a+b;
-  }
-  
-  fn main()
-  {
-     print(example(10, 5.4f)); // should return 15.4f.
-  }
+package -> "ExampleApp"
+use package -> "io"
+
+fn main() <- int
+{
+	var x -> "Hello, world!" : string
+	print(x)
+	return 1
+}
 ```
