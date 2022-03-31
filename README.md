@@ -12,9 +12,9 @@ It might not be the best idea but it's ok.
 package -> "ExampleApp"
 use package -> "io"
 
-fn main() <- int
+fn main() -> int
 {
-	var x -> "Hello, world!" : string
+	var x <- "Hello, world!" : string
 	print(x)
 	return 1
 }
