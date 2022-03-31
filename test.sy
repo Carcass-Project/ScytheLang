@@ -1,9 +1,4 @@
-﻿package -> "ExampleApp"
-use package -> "io"
-
-fn main() <- int
+﻿fn main() -> int
 {
-	var x -> "Hello, world!" : string
-	print(x)
-	return 1
+	print(123)
 }

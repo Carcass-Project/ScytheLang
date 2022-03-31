@@ -69,16 +69,6 @@ namespace Scythe.Nodes
         }
     }
 
-    public class VarUseExpr : Expression
-    {
-        public Token name;
-
-        public VarUseExpr(Token name)
-        {
-            this.name = name;
-        }
-    }
-
     public class StringLiteralExpr : Expression
     {
         public Token literal;
