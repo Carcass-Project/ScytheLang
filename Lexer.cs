@@ -31,7 +31,7 @@ namespace Scythe
 
         // Literal Tokens. (lit_x)
         [Regex(Regexes.StringLiteral)] lit_String,
-        [Regex(Regexes.IeeeFloatLiteral)] lit_Float,
+        [Regex(@"((([0 - 9]*.) | ((\+| -)?[0 - 9] +[0 - 9_] *.))[0-9]+[0-9_]*((e|E)(\+|-)?[0-9]+)?)|((\+|-)?infinity)|(NaN)")] lit_Float,
         [Regex(Regexes.IntLiteral)] lit_Int,
 
         // Mathematical Operators: (op_x)
