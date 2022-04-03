@@ -57,13 +57,13 @@ namespace Scythe
             return new ExpressionStatement(expr);
         }
 
-        [Rule("stmt: kw_Function identifier '(' ((identifier ':' type_identifier) (',' (identifier ':' type_identifier))*)? ')' bas_leftlook type_identifier block_stmt")]
+        [Rule("stmt: kw_Function identifier '(' ((identifier ':' type_identifier) (',' (identifier ':' type_identifier))*)? ')' bas_rightlook type_identifier block_stmt")]
         private static Statement FunctionDeclaration(Token _1, Token name, Token _3, Punctuated<(Token Ident, Token Colon, Token Type), Token> parameters, Token _4, Token _5, Token type, BlockStatement body)
         {
             return new FunctionStatement(parameters, body, name, type);
         }
 
-        [Rule("stmt: kw_Var identifier bas_rightlook expr ':' type_identifier")]
+        [Rule("stmt: kw_Var identifier bas_leftlook expr ':' type_identifier")]
         private static Statement VarDeclaration(Token _1, Token name, Token _2, Expression value, Token _3, Token type)
         {
             return new VariableDeclStatement(name, value, type);
@@ -104,7 +104,7 @@ namespace Scythe
         [Rule("expr: identifier")]
         public static Expression VariableExpr(Token varf)
         {
-            return new VarUseExpr(varf);
+            return new VariableExpr(varf);
         }
         [Rule("expr: lit_Float")]
         public static Expression FloatLiteral(Token literal)
