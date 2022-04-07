@@ -92,6 +92,16 @@ namespace Scythe.Nodes.Bound
         }
     }
 
+    public class BoundInlineAsmStatement : BoundStatement
+    {
+        public BoundExpression asm;
+
+        public BoundInlineAsmStatement(BoundExpression asm)
+        {
+            this.asm = asm;
+        }
+    }
+
     public class BoundVariableDeclStatement : BoundStatement
     {
         public string Name;

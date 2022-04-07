@@ -163,6 +163,9 @@ namespace Scythe
                     case VariableDeclStatement:
                         allStmts.Add(new BoundVariableDeclStatement((x as VariableDeclStatement).name.Text, DecideType((x as VariableDeclStatement).type.Text).Value, BindExpression((x as VariableDeclStatement).value)));
                         break;
+                    case InlineAsmStatement:
+                        allStmts.Add(new BoundInlineAsmStatement(BindExpression((x as InlineAsmStatement).asm)));
+                        break;
                 }
             }
             return allStmts;

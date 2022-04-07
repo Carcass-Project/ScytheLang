@@ -95,6 +95,16 @@ namespace Scythe.Nodes
         }
     }
 
+    public class InlineAsmStatement : Statement
+    {
+        public Expression asm;
+
+        public InlineAsmStatement(Expression asm)
+        {
+            this.asm = asm;
+        }
+    }
+
     public class ReturnStatement : Statement
     {
         public Expression value;

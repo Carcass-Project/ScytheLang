@@ -69,6 +69,12 @@ namespace Scythe
             return new VariableDeclStatement(name, value, type);
         }
 
+        [Rule("stmt: kw_Asm '(' expr ')'")]
+        private static Statement InlAsmD(Token _1, Token _2, Expression expr, Token _3)
+        {
+            return new InlineAsmStatement(expr);
+        }
+
         [Rule("stmt: kw_Return expr")]
         public static Statement ReturnStmt(Token _1, Expression expr)
         {

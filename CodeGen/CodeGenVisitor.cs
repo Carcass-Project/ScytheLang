@@ -47,7 +47,7 @@ namespace Scythe.CodeGen
             BoundFunctionStatement => this.VisitFunction(stmt as BoundFunctionStatement),
             BoundExpressionStatement => this.VisitExprStmt(stmt as BoundExpressionStatement),
             BoundReturnStatement => this.VisitReturn(stmt as BoundReturnStatement),
-            
+            BoundInlineAsmStatement => this.VisitInlineAsm(stmt as BoundInlineAsmStatement),
             _ => throw new Exception("[FATAL]: Statement that was attempted to be visited is invalid/unknown. '"+stmt+"'."),
         };
 
@@ -180,6 +180,13 @@ namespace Scythe.CodeGen
             return expr;
         }
 
+        public unsafe BoundStatement VisitInlineAsm(BoundInlineAsmStatement stmt)
+        {
+            //LLVM.AppendModuleInlineAsm(module, StrToSByte((stmt.asm as BoundStringLiteralExpr).Literal), (UIntPtr)(stmt.asm as BoundStringLiteralExpr).Literal.Length);
+            LLVM.ConstInlineAsm(LLVM.FunctionType(LLVM.VoidType(), null, 0, 0), StrToSByte((stmt.asm as BoundStringLiteralExpr).Literal), StrToSByte(""), 0, 1);
+            return stmt;
+        }
+
         public unsafe BoundExpression VisitCallFExpr(BoundCallFunctionExpr expr)
         {
             var callee = LLVM.GetNamedFunction(module, StrToSByte(expr.Name));
@@ -269,8 +276,9 @@ namespace Scythe.CodeGen
                 foreach (var x in node.Body.Body)
                     this.Visit(x);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.Message);
                 LLVM.DeleteFunction(function2);
                 throw;
             }
@@ -282,6 +290,11 @@ namespace Scythe.CodeGen
             this.valueStack.Push(function2);
 
             return node;
+        }
+
+        public unsafe BoundStatement VisitVariableDecl(BoundVariableDeclStatement stmt)
+        {
+            
         }
 
         public unsafe BoundStatement VisitReturn(BoundReturnStatement stmt)
