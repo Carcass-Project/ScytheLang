@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scythe
 {
-    public class Symbol
+    public unsafe class Symbol
     {
         public string name;
     }

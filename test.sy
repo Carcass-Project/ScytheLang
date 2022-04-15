@@ -1,9 +1,9 @@
-﻿fn add(a: int, b: int) -> int
-{
-	return a+b
-}
+﻿use package -> "packagetest.sy"
 
-fn main(a: int) -> int
+fn main() -> int
 {
-	return add(a,35)
+	var x <- malloc(4) : string
+	x <- "hi"
+	print("hey")
+	return 1
 }
