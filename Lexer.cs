@@ -27,6 +27,7 @@ namespace Scythe
         [Token("float")] kw_Float,
         [Token("char")] kw_Char,
         [Token("uint")] kw_Uint,
+        [Token("asm")] kw_Asm,
         [Token("package")] kw_Package,
 
         // Literal Tokens. (lit_x)

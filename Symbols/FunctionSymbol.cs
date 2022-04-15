@@ -12,14 +12,21 @@ namespace Scythe.Symbols
         Float,
         Uint,
         Bool,
-        String
+        String,
+        Void
     }
 
     public class FunctionSymbol : Symbol
     {
-        public string Name;
-        public Nodes.BlockStatement Body;
-        
+
+        //public Nodes.BlockStatement Body;
+
         public DataType returnType;
+
+        public unsafe FunctionSymbol(string name, DataType returnType)
+        {
+            this.name = name;
+            this.returnType = returnType;
+        }
     }
 }

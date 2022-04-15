@@ -12,6 +12,7 @@
     <PackageReference Include="ClangSharp" Version="13.0.0-beta1" />
     <PackageReference Include="libLLVM" Version="13.0.0" />
     <PackageReference Include="LLVMSharp" Version="13.0.0-beta2" />
+    <PackageReference Include="Newtonsoft.JSON" Version="13.0.1" />
     <PackageReference Include="Yoakke.SynKit.Lexer" Version="2022.2.16-2.29.53-nightly" />
     <PackageReference Include="Yoakke.SynKit.Lexer.Generator" Version="2022.2.16-2.29.53-nightly" />
     <PackageReference Include="Yoakke.SynKit.Parser" Version="2022.2.16-2.29.53-nightly" />
@@ -21,9 +22,16 @@
   <PropertyGroup>
     
     <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+    
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    
+    <DebugType>portable</DebugType>
   </PropertyGroup>
     
   <ItemGroup>
+    <None Update="packagetest.sy">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="test.sy">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

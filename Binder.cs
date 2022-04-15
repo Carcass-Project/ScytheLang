@@ -113,7 +113,7 @@ namespace Scythe
                     return new BoundFloatLiteralExpr(float.Parse(Floatlit.literal.Text));
                 case StringLiteralExpr:
                     var strlit = expr as StringLiteralExpr;
-                    return new BoundStringLiteralExpr(strlit.literal.Text);
+                    return new BoundStringLiteralExpr(strlit.literal.Text.Replace("\"",""));
             }
             throw new InvalidDataException($"Expression of type {expr.GetType().Name} could not be binded to! (It is invalid.)");
         }
@@ -162,6 +162,12 @@ namespace Scythe
                         break;
                     case VariableDeclStatement:
                         allStmts.Add(new BoundVariableDeclStatement((x as VariableDeclStatement).name.Text, DecideType((x as VariableDeclStatement).type.Text).Value, BindExpression((x as VariableDeclStatement).value)));
+                        break;
+                    case InlineAsmStatement:
+                        allStmts.Add(new BoundInlineAsmStatement(BindExpression((x as InlineAsmStatement).asm)));
+                        break;
+                    case VariableSetStatement:
+                        allStmts.Add(new BoundVariableSetStatement((x as VariableSetStatement).a.Text, BindExpression((x as VariableSetStatement).b)));
                         break;
                 }
             }
