@@ -1,9 +1,8 @@
 ﻿use package -> "packagetest.sy"
 
-fn main() -> int
+fn main() -> string
 {
-	var x <- malloc(4) : string
-	x <- "hi"
-	print("hey")
-	return 1
+	var x <- "Hello, world!" : string
+	print(x)
+	return x
 }

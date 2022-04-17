@@ -227,6 +227,12 @@ namespace Scythe.CodeGen
             switch (expr.op)
             {
                 case Operator.PLUS:
+                    if(expr.a.GetType() == typeof(BoundStringLiteralExpr) && expr.b.GetType() == typeof(BoundStringLiteralExpr))
+                    {
+                        n = LLVM.BuildGlobalStringPtr(builder, StrToSByte((expr.a as BoundStringLiteralExpr).Literal+(expr.b as BoundStringLiteralExpr).Literal), StrToSByte("strtmp"));
+                        break;
+                    }
+
                     n = LLVM.BuildAdd(builder, l, r, s = StrToSByte("AddTMP"));
                     break;
                 case Operator.MINUS:
@@ -287,6 +293,20 @@ namespace Scythe.CodeGen
 
                         fixed (LLVMOpaqueType** pptr = new LLVMOpaqueType*[] { LLVM.Int32Type() })
                             callee = LLVM.AddFunction(mod, StrToSByte("malloc"), LLVM.FunctionType(LLVM.PointerType(LLVM.Int8Type(), 0), pptr, 1, 0));
+                    }
+                }
+                if (expr.Name == "itoa")
+                {
+                    var namedF = mod.GetNamedFunction("itoa");
+                    if (namedF != null)
+                    {
+                        callee = namedF;
+                    }
+                    else
+                    {
+
+                        fixed (LLVMOpaqueType** pptr = new LLVMOpaqueType*[] { LLVM.Int32Type(), LLVM.PointerType(LLVM.Int8Type(), 0), LLVM.Int32Type() })
+                            callee = LLVM.AddFunction(mod, StrToSByte("itoa"), LLVM.FunctionType(LLVM.PointerType(LLVM.Int8Type(), 0), pptr, 3, 0));
                     }
                 }
 
