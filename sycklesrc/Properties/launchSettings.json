@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "syckle": {
+      "commandName": "Project",
+      "commandLineArgs": "version"
+    }
+  }
+}
