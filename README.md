@@ -6,16 +6,13 @@ I felt bored, and I recently was using Rust and looking how to code an operating
 I decided I'll make my own Rust and add in my own features.
 It might not be the best idea but it's ok.
 
-# Mockup
-
+# Example Code
 ```
-package -> "ExampleApp"
-use package -> "io"
+use package -> "math.sy" // Gets parsed into a syntax tree and is binded to the program's tree.
 
 fn main() -> int
 {
-	var x <- "Hello, world!" : string
-	print(x)
-	return 1
+   var x <- 100 : int
+   return pow(100,2)
 }
 ```
