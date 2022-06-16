@@ -24,25 +24,10 @@ partial class Program
                 {
                     Console.WriteLine("Success!");
 
-                    Directory.CreateDirectory("out");
-
-                    var triple = LLVM.GetDefaultTargetTriple();
-
-                    LLVM.InitializeAllTargetInfos();
-                    LLVM.InitializeAllTargets();
-                    LLVM.InitializeAllTargetMCs();
-                    LLVM.InitializeAllAsmParsers();
-                    LLVM.InitializeAllAsmPrinters();
-
-                    sbyte* Error;
 
 
-
-                    LLVMModuleRef module = LLVM.ModuleCreateWithName(Helpers.StrToSByte(extraOptions[1]));
-                    LLVMBuilderRef builder = LLVM.CreateBuilder();
-                
-               
-                if (extraOptions.Length > 2)
+                    string fileName = "";
+                    if (extraOptions.Length > 2)
                     {
                         if (extraOptions[2] == "--modules")
                         {
@@ -82,7 +67,37 @@ partial class Program
                                 }
                             }
                         }
+                        
+                        if(extraOptions[2] == "--wasm")
+                        {
+                            LLVM.InitializeWebAssemblyTargetInfo();
+                            LLVM.InitializeWebAssemblyTarget();
+                            LLVM.InitializeWebAssemblyTargetMC();
+                            LLVM.InitializeWebAssemblyAsmParser();
+                            LLVM.InitializeWebAssemblyAsmPrinter();
+                            fileName = "out/" + extraOptions[1] + ".wasm";
+                        }
                     }
+
+                    LLVM.InitializeAllTargetInfos();
+                    LLVM.InitializeAllTargets();
+                    LLVM.InitializeAllTargetMCs();
+                    LLVM.InitializeAllAsmParsers();
+                    LLVM.InitializeAllAsmPrinters();
+
+                    fileName = "out/" + extraOptions[1] + ".o";
+                    Directory.CreateDirectory("out");
+
+                    var triple = LLVM.GetDefaultTargetTriple();
+
+
+
+                    sbyte* Error;
+
+
+
+                    LLVMModuleRef module = LLVM.ModuleCreateWithName(Helpers.StrToSByte(extraOptions[1]));
+                    LLVMBuilderRef builder = LLVM.CreateBuilder();
 
                     var CodeGenVisit = new Scythe.CodeGen.CodeGenVisitor(module, builder, SymbolTable);
                     foreach (var x in new Binder().Bind(program.Ok.Value.ToList()))
@@ -111,7 +126,7 @@ partial class Program
 
                     LLVM.SetTarget(module, triple);
 
-                    string fileName = "out/" + extraOptions[1] + ".o";
+                    
                     LLVMCodeGenFileType flType = LLVMCodeGenFileType.LLVMObjectFile;
 
                     sbyte* emitError;

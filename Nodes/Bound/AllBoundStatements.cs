@@ -128,6 +128,44 @@ namespace Scythe.Nodes.Bound
         }
     }
 
+    public class BoundCastStatement : BoundStatement
+    {
+        public DataType Type;
+        public BoundExpression Expr;
+
+        public BoundCastStatement(DataType type, BoundExpression expr)
+        {
+            Type = type;
+            Expr = expr;
+        }
+    }
+
+    public class BoundIfStatement : BoundStatement
+    {
+        public BoundExpression cond;
+        public BoundBlockStatement body;
+
+        public BoundIfStatement(BoundExpression cond, BoundBlockStatement body)
+        {
+            this.cond = cond;
+            this.body = body;
+        }
+    }
+
+    public class BoundExternFunctionStatement : BoundStatement
+    {
+        public List<Parameter> Parameters;
+        public string Name;
+        public Scythe.Symbols.DataType Type;
+
+        public BoundExternFunctionStatement(List<Parameter> parameters, string name, DataType type)
+        {
+            Parameters = parameters;
+            Name = name;
+            Type = type;
+        }
+    }
+
     public class BoundReturnStatement : BoundStatement
     {
         public BoundExpression Value;

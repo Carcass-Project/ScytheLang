@@ -47,6 +47,8 @@ namespace Scythe
                     return DataType.Bool;
                 case "uint":
                     return DataType.Uint;
+                case "void":
+                    return DataType.Void;
                 default:
                     throw new InvalidDataException("This type '" + type + "' does not exist, sorry!");
             }
@@ -168,6 +170,15 @@ namespace Scythe
                         break;
                     case VariableSetStatement:
                         allStmts.Add(new BoundVariableSetStatement((x as VariableSetStatement).a.Text, BindExpression((x as VariableSetStatement).b)));
+                        break;
+                    case ExternFunctionStatement:
+                        allStmts.Add(new BoundExternFunctionStatement(BindParams((x as ExternFunctionStatement).parameters), (x as ExternFunctionStatement).name.Text, DecideType((x as ExternFunctionStatement).type.Text).Value));
+                        break;
+                    case CastStatement:
+                        allStmts.Add(new BoundCastStatement(DecideType((x as CastStatement).dataType.Text).Value, BindExpression((x as CastStatement).expression)));
+                        break;
+                    case IfStatement:
+                        allStmts.Add(new BoundIfStatement(BindExpression((x as IfStatement).condition), new BoundBlockStatement(Bind((x as IfStatement).conditionBlock.statements.ToList()))));
                         break;
                 }
             }

@@ -95,6 +95,44 @@ namespace Scythe.Nodes
         }
     }
 
+    public class CastStatement : Statement
+    {
+        public Token dataType;
+        public Expression expression;
+
+        public CastStatement(Token dataType, Expression expression)
+        {
+            this.dataType = dataType;
+            this.expression = expression;
+        }
+    }
+
+    public class IfStatement : Statement
+    {
+        public Expression condition;
+        public BlockStatement conditionBlock;
+
+        public IfStatement(Expression condition, BlockStatement conditionBlock)
+        {
+            this.condition = condition;
+            this.conditionBlock = conditionBlock;
+        }
+    }
+
+    public class ExternFunctionStatement : Statement
+    {
+        public Punctuated<(Token Ident, Token Colon, Token Type), Token> parameters;
+        public Token name;
+        public Token type;
+
+        public ExternFunctionStatement(Punctuated<(Token Ident, Token Colon, Token Type), Token> parameters, Token name, Token type)
+        {
+            this.parameters = parameters;
+            this.name = name;
+            this.type = type;
+        }
+    }
+
     public class InlineAsmStatement : Statement
     {
         public Expression asm;

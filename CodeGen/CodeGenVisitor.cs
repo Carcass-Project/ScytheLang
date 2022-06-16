@@ -54,6 +54,8 @@ namespace Scythe.CodeGen
             BoundVariableDeclStatement => this.VisitVariableDecl(stmt as BoundVariableDeclStatement),
             BoundUsePackageStatement => this.VisitImportStmt(stmt as BoundUsePackageStatement),
             BoundVariableSetStatement => this.VisitVarSet(stmt as BoundVariableSetStatement),
+            BoundExternFunctionStatement => this.VisitFunctionExtern(stmt as BoundExternFunctionStatement),
+            BoundCastStatement => this.VisitCast(stmt as BoundCastStatement),
             _ => throw new Exception("[FATAL]: Statement that was attempted to be visited is invalid/unknown. '"+stmt+"'."),
         };
 
@@ -145,6 +147,35 @@ namespace Scythe.CodeGen
             return sby;
         }
 
+        public unsafe LLVMIntPredicate CDTOperator(Operator op) => op switch
+        {
+            Operator.GT => LLVMIntPredicate.LLVMIntSGT,
+            Operator.LT => LLVMIntPredicate.LLVMIntSLT,
+            Operator.GQ => LLVMIntPredicate.LLVMIntSGE,
+            Operator.LQ => LLVMIntPredicate.LLVMIntSLT,
+            Operator.NOT => LLVMIntPredicate.LLVMIntNE,
+            Operator.EQ => LLVMIntPredicate.LLVMIntEQ,
+            _ => throw new Exception("Unknown Operator.")
+        };
+
+        public unsafe BoundStatement VisitIfStmt(BoundIfStatement stmt)
+        {
+            BoundBinaryExpr cond = stmt.cond as BoundBinaryExpr;
+
+            this.Visit(cond.a); this.Visit(cond.b);
+
+            LLVMOpaqueValue* r = valueStack.Pop();
+            LLVMOpaqueValue* l = valueStack.Pop();
+
+            var val = LLVM.BuildICmp(builder, CDTOperator(cond.op), l, r, StrToSByte("ifcont"));
+
+            stmt.body.Body
+
+            LLVM.BuildBr(builder,)
+
+            return stmt;
+        }
+
         public unsafe BoundStatement VisitImportStmt(BoundUsePackageStatement stmt)
         {
             var importedFile = File.ReadAllText(stmt.Name.Replace("\"", ""));
@@ -200,6 +231,8 @@ namespace Scythe.CodeGen
                     return LLVM.FloatType();
                 case DataType.String:
                     return LLVM.PointerType(LLVM.Int8Type(), 0);
+                case DataType.Void:
+                    return LLVM.VoidType();
             }
             return LLVM.VoidType();
         }
@@ -227,6 +260,12 @@ namespace Scythe.CodeGen
             switch (expr.op)
             {
                 case Operator.PLUS:
+                    if(expr.a.GetType() == typeof(BoundStringLiteralExpr) && expr.b.GetType() == typeof(BoundStringLiteralExpr))
+                    {
+                        n = LLVM.BuildGlobalStringPtr(builder, StrToSByte((expr.a as BoundStringLiteralExpr).Literal+(expr.b as BoundStringLiteralExpr).Literal), StrToSByte("strtmp"));
+                        break;
+                    }
+
                     n = LLVM.BuildAdd(builder, l, r, s = StrToSByte("AddTMP"));
                     break;
                 case Operator.MINUS:
@@ -250,6 +289,24 @@ namespace Scythe.CodeGen
         {
             LLVM.AppendModuleInlineAsm(module, StrToSByte((stmt.asm as BoundStringLiteralExpr).Literal), (UIntPtr)(stmt.asm as BoundStringLiteralExpr).Literal.Length);
             //LLVM.ConstInlineAsm(LLVM.FunctionType(LLVM.VoidType(), null, 0, 0), StrToSByte((stmt.asm as BoundStringLiteralExpr).Literal), StrToSByte(""), 0, 1);
+            return stmt;
+        }
+
+        public unsafe BoundStatement VisitFunctionExtern(BoundExternFunctionStatement stmt)
+        {
+            var mod = builder.InsertBlock.Parent.GlobalParent;
+            LLVMOpaqueValue* callee;
+            var namedF = mod.GetNamedFunction(stmt.Name);
+            if (namedF != null)
+            {
+                callee = namedF;
+            }
+            else
+            {
+
+                fixed (LLVMOpaqueType** pptr = ParameterTypes(stmt.Parameters))
+                    LLVM.AddFunction(mod, StrToSByte(stmt.Name), LLVM.FunctionType(DataTyToType(stmt.Type), pptr, (uint)stmt.Parameters.Count, 1));
+            }
             return stmt;
         }
 
@@ -289,6 +346,20 @@ namespace Scythe.CodeGen
                             callee = LLVM.AddFunction(mod, StrToSByte("malloc"), LLVM.FunctionType(LLVM.PointerType(LLVM.Int8Type(), 0), pptr, 1, 0));
                     }
                 }
+                if (expr.Name == "itoa")
+                {
+                    var namedF = mod.GetNamedFunction("itoa");
+                    if (namedF != null)
+                    {
+                        callee = namedF;
+                    }
+                    else
+                    {
+
+                        fixed (LLVMOpaqueType** pptr = new LLVMOpaqueType*[] { LLVM.Int32Type(), LLVM.PointerType(LLVM.Int8Type(), 0), LLVM.Int32Type() })
+                            callee = LLVM.AddFunction(mod, StrToSByte("itoa"), LLVM.FunctionType(LLVM.PointerType(LLVM.Int8Type(), 0), pptr, 3, 0));
+                    }
+                }
 
             }
             if(LLVM.CountParams(callee) != expr.Arguments.Count)
@@ -305,10 +376,25 @@ namespace Scythe.CodeGen
                 argsV[i] = valueStack.Pop();
             }
 
-            fixed(LLVMOpaqueValue** pptr = argsV)
-                valueStack.Push(LLVM.BuildCall(builder, callee, pptr, argCount, StrToSByte("CallTMP")));
+            fixed (LLVMOpaqueValue** pptr = argsV)
+            {
+             
+                    valueStack.Push(LLVM.BuildCall(builder, callee, pptr, argCount, StrToSByte("CallTMP")));
+                 
+                
+            }
 
             return expr;
+        }
+
+        public unsafe BoundStatement VisitCast(BoundCastStatement stmt)
+        {
+            this.Visit(stmt.Expr);
+            var x = valueStack.Pop();
+
+            if (LLVM.TypeOf(x.Value) == LLVM.Int32Type() && stmt.Type == DataType.Float)
+                LLVM.BuildCast(builder, LLVMOpcode.LLVMSIToFP, x.Value, DataTyToType(stmt.Type), StrToSByte("CastSIFP"));
+            return stmt;
         }
 
         public unsafe BoundStatement VisitFunction(BoundFunctionStatement node)

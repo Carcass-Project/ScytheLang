@@ -1,9 +1,9 @@
 ﻿use package -> "packagetest.sy"
 
+extern fn strlen(x: string) -> int
+
 fn main() -> int
 {
-	var x <- malloc(4) : string
-	x <- "hi"
-	print("hey")
-	return 1
+	var x <- (float)250 : float
+	return 3
 }

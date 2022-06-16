@@ -45,7 +45,7 @@ namespace Scythe
             return new BlockStatement(stmts);
         }
 
-        [Rule("type_identifier: (kw_Int|kw_String|kw_Float|kw_Bool|kw_Char|kw_Uint)")]
+        [Rule("type_identifier: (kw_Int|kw_String|kw_Float|kw_Bool|kw_Char|kw_Uint|kw_Void)")]
         private static Token typeident(Token ident)
         {
             return ident;
@@ -85,6 +85,25 @@ namespace Scythe
         private static Statement SetVarStmt(Token a, Token _1, Expression b)
         {
             return new VariableSetStatement(a, b);
+        }
+        
+        
+        [Rule("stmt: kw_Extern kw_Function identifier '(' ((identifier ':' type_identifier) (',' (identifier ':' type_identifier))*)? ')' bas_rightlook type_identifier")]
+        private static Statement ExtFunctionDeclaration(Token _0, Token _1, Token name, Token _3, Punctuated<(Token Ident, Token Colon, Token Type), Token> parameters, Token _4, Token _5, Token type)
+        {
+            return new ExternFunctionStatement(parameters, name, type);
+        }
+
+        [Rule("stmt: kw_If '(' expr ')' block_stmt")]
+        private static Statement IfStmtt(Token _0, Token _1, Expression expr, Token _2, BlockStatement stmt)
+        {
+            return new IfStatement(expr, stmt);
+        }
+
+        [Rule("stmt: '(' type_identifier ')' expr")]
+        private static Statement CastStmt(Token _1, Token type, Token _2, Expression expr)
+        {
+            return new CastStatement(type, expr);
         }
 
         [Right("^")]
