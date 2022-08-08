@@ -1,0 +1,8 @@
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\Scythe.pdb
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\packagetest.sy
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\test.sy
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\libclang.dll
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\libClangSharp.dll
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\libLLVM.dll
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\Scythe.xml
+C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\win-x64\publish\win-x64\Scythe.exe

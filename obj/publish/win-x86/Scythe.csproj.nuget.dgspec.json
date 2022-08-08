@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\Scythe.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\Scythe.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\Scythe.csproj",
+        "projectName": "Scythe",
+        "projectPath": "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\Scythe.csproj",
+        "packagesPath": "C:\\Users\\bitte\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\obj\\publish\\win-x86\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\VS2022SHRDINS\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\bitte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\bitte\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "ClangSharp": {
+              "target": "Package",
+              "version": "[13.0.0-beta1, )"
+            },
+            "LLVMSharp": {
+              "target": "Package",
+              "version": "[13.0.0-beta2, )"
+            },
+            "Mono.Cecil": {
+              "target": "Package",
+              "version": "[0.11.4, )"
+            },
+            "Newtonsoft.JSON": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Yoakke.SynKit.Lexer": {
+              "target": "Package",
+              "version": "[2022.2.16-2.29.53-nightly, )"
+            },
+            "Yoakke.SynKit.Lexer.Generator": {
+              "target": "Package",
+              "version": "[2022.2.16-2.29.53-nightly, )"
+            },
+            "Yoakke.SynKit.Parser": {
+              "target": "Package",
+              "version": "[2022.2.16-2.29.53-nightly, )"
+            },
+            "Yoakke.SynKit.Parser.Generator": {
+              "target": "Package",
+              "version": "[2022.2.16-2.29.53-nightly, )"
+            },
+            "libLLVM": {
+              "target": "Package",
+              "version": "[13.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[6.0.6, 6.0.6]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
+              "version": "[6.0.6, 6.0.6]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x86",
+              "version": "[6.0.6, 6.0.6]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
+              "version": "[6.0.6, 6.0.6]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

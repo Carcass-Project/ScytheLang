@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Scythe</name>
+    </assembly>
+    <members>
+        <member name="T:Scythe.CodeGen.IL.ILEmitter">
+            <summary>
+            Emitter for CIL, because I hate my life even more.
+            </summary>
+        </member>
+        <member name="T:Scythe.Pointer`1">
+            <summary>Wraps a <typeparamref name="T" /> pointer so it can be used as a generic type parameter.</summary>
+            <typeparam name="T">The type of the pointer being wrapped.</typeparam>
+        </member>
+        <member name="F:Scythe.Pointer`1.Value">
+            <summary>The pointer value wrapped by the instance.</summary>
+        </member>
+        <member name="M:Scythe.Pointer`1.#ctor(`0*)">
+            <summary>Initializes a new instance of the <see cref="T:Scythe.Pointer`1" /> struct.</summary>
+            <param name="value">The pointer to be wrapped by the instance.</param>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_Implicit(`0*)~Scythe.Pointer{`0}">
+            <summary>Implicitly converts a <typeparamref name="T" /> pointer to a new pointer instance.</summary>
+            <param name="value">The <typeparamref name="T" /> pointer for which to wrap.</param>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_Implicit(Scythe.Pointer{`0})~`0*">
+            <summary>Implicitly converts a pointer instance to the <typeparamref name="T" /> pointer it wraps.</summary>
+            <param name="value">The pointer for which to get the wrapped value.</param>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_Equality(Scythe.Pointer{`0},Scythe.Pointer{`0})">
+            <summary>Compares two pointers for equality.</summary>
+            <param name="left">The pointer to compare with <paramref name="right" />.</param>
+            <param name="right">The pointer to compare with <paramref name="left" />.</param>
+            <returns><c>true</c> if <paramref name="left" /> and <paramref name="right" /> are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_Inequality(Scythe.Pointer{`0},Scythe.Pointer{`0})">
+            <summary>Compares two pointers for inequality.</summary>
+            <param name="left">The pointer to compare with <paramref name="right" />.</param>
+            <param name="right">The pointer to compare with <paramref name="left" />.</param>
+            <returns><c>true</c> if <paramref name="left" /> and <paramref name="right" /> are not equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_GreaterThan(Scythe.Pointer{`0},Scythe.Pointer{`0})">
+            <summary>Compares two pointers to determine relative sort-order.</summary>
+            <param name="left">The pointer to compare with <paramref name="right" />.</param>
+            <param name="right">The pointer to compare with <paramref name="left" />.</param>
+            <returns><c>true</c> if <paramref name="left" /> is greater than <paramref name="right" />; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_GreaterThanOrEqual(Scythe.Pointer{`0},Scythe.Pointer{`0})">
+            <summary>Compares two pointers to determine relative sort-order.</summary>
+            <param name="left">The pointer to compare with <paramref name="right" />.</param>
+            <param name="right">The pointer to compare with <paramref name="left" />.</param>
+            <returns><c>true</c> if <paramref name="left" /> is greater than or equal to <paramref name="right" />; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_LessThan(Scythe.Pointer{`0},Scythe.Pointer{`0})">
+            <summary>Compares two pointers to determine relative sort-order.</summary>
+            <param name="left">The pointer to compare with <paramref name="right" />.</param>
+            <param name="right">The pointer to compare with <paramref name="left" />.</param>
+            <returns><c>true</c> if <paramref name="left" /> is less than <paramref name="right" />; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Scythe.Pointer`1.op_LessThanOrEqual(Scythe.Pointer{`0},Scythe.Pointer{`0})">
+            <summary>Compares two pointers to determine relative sort-order.</summary>
+            <param name="left">The pointer to compare with <paramref name="right" />.</param>
+            <param name="right">The pointer to compare with <paramref name="left" />.</param>
+            <returns><c>true</c> if <paramref name="left" /> is less than or equal to <paramref name="right" />; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Scythe.Pointer`1.CompareTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Scythe.Pointer`1.CompareTo(Scythe.Pointer{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Scythe.Pointer`1.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Scythe.Pointer`1.Equals(Scythe.Pointer{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Scythe.Pointer`1.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Scythe.Pointer`1.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Scythe.Pointer`1.ToString(System.String,System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="T:Yoakke.SynKit.Lexer.Attributes.CharSourceAttribute">
+            <summary>
+            An attribute to annotate the source character stream for the generated lexer.
+            </summary>
+        </member>
+        <member name="T:Yoakke.SynKit.Lexer.Attributes.EndAttribute">
+            <summary>
+            An attribute to mark an enum value as the end of source token type.
+            </summary>
+        </member>
+        <member name="T:Yoakke.SynKit.Lexer.Attributes.ErrorAttribute">
+            <summary>
+            An attribute to mark an enum value as an error token type.
+            </summary>
+        </member>
+        <member name="T:Yoakke.SynKit.Lexer.Attributes.IgnoreAttribute">
+            <summary>
+            An attribute to mark an enum value to be an ignored token type.
+            </summary>
+        </member>
+        <member name="T:Yoakke.SynKit.Lexer.Attributes.LexerAttribute">
+            <summary>
+            An attribute to mark a class to generate a lexer for token types.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Lexer.Attributes.LexerAttribute.TokenType">
+            <summary>
+            The enumeration type that is annotated with token attributes.
+            The lexer will be generated based on the annotations on the enum fields.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Lexer.Attributes.LexerAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Lexer.Attributes.LexerAttribute"/> class.
+            </summary>
+            <param name="tokenType">The token type to generate the lexer for.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Lexer.Attributes.RegexAttribute">
+            <summary>
+            An attribute to define a token type in terms of a regular expression.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Lexer.Attributes.RegexAttribute.Regex">
+            <summary>
+            The regex to match the token.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Lexer.Attributes.RegexAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Lexer.Attributes.RegexAttribute"/> class.
+            </summary>
+            <param name="regex">The regular expression.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Lexer.Attributes.TokenAttribute">
+            <summary>
+            An attribute to define a token type in terms of a literal string to match.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Lexer.Attributes.TokenAttribute.Text">
+            <summary>
+            The text to match the token.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Lexer.Attributes.TokenAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Lexer.Attributes.TokenAttribute"/> class.
+            </summary>
+            <param name="text">The text to match.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Parser.Attributes.CustomParserAttribute">
+            <summary>
+            An attribute to annotate a bustom parser for a rule.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Parser.Attributes.CustomParserAttribute.Rule">
+            <summary>
+            The rule name.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Parser.Attributes.CustomParserAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Parser.Attributes.CustomParserAttribute"/> class.
+            </summary>
+            <param name="rule">The rule name.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Parser.Attributes.LeftAttribute">
+            <summary>
+            An attribute to annotate a left-associative operator.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Parser.Attributes.LeftAttribute.Separators">
+            <summary>
+            The separators that should be left-associative.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Parser.Attributes.LeftAttribute.#ctor(System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Parser.Attributes.LeftAttribute"/> class.
+            </summary>
+            <param name="separators">The separator elements that should be left-associative.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Parser.Attributes.ParserAttribute">
+            <summary>
+            An attribute to mark a class as a parser with rule methods inside.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Parser.Attributes.ParserAttribute.TokenType">
+            <summary>
+            The token kind type to use as a parser element.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Parser.Attributes.ParserAttribute.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Parser.Attributes.ParserAttribute"/> class.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Parser.Attributes.ParserAttribute.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Parser.Attributes.ParserAttribute"/> class.
+            </summary>
+            <param name="tokenType">The token kind type to use as a parser element.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Parser.Attributes.RightAttribute">
+            <summary>
+            An attribute to annotate a right-associative operator.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Parser.Attributes.RightAttribute.Separators">
+            <summary>
+            The separators that should be right-associative.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Parser.Attributes.RightAttribute.#ctor(System.Object[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Parser.Attributes.RightAttribute"/> class.
+            </summary>
+            <param name="separators">The separator elements that should be right-associative.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Parser.Attributes.RuleAttribute">
+            <summary>
+            An attribute to annotate a rule over a transformation method.
+            </summary>
+        </member>
+        <member name="P:Yoakke.SynKit.Parser.Attributes.RuleAttribute.Rule">
+            <summary>
+            The rule in grammar notation.
+            </summary>
+        </member>
+        <member name="M:Yoakke.SynKit.Parser.Attributes.RuleAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yoakke.SynKit.Parser.Attributes.RuleAttribute"/> class.
+            </summary>
+            <param name="rule">The rule in grammar notation.</param>
+        </member>
+        <member name="T:Yoakke.SynKit.Parser.Attributes.TokenSourceAttribute">
+            <summary>
+            An attribute to mark a field or property as the thing holding onto the token source.
+            </summary>
+        </member>
+    </members>
+</doc>

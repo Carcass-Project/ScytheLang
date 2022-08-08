@@ -1,0 +1,6 @@
+﻿fn main() -> int
+{
+	print("i")
+
+	return 1
+}

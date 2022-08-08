@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Scythe": {
+      "commandName": "Project",
+      "commandLineArgs": "build test.sy app --jit --nat --modules io.bc"
+    }
+  }
+}

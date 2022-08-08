@@ -1,0 +1,1045 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "ClangSharp/13.0.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "ClangSharp.Interop": "13.0.0-beta1"
+        },
+        "compile": {
+          "lib/net6.0/ClangSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/ClangSharp.dll": {}
+        }
+      },
+      "ClangSharp.Interop/13.0.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "libClang": "13.0.1",
+          "libClangSharp": "13.0.0-beta1"
+        },
+        "compile": {
+          "lib/net6.0/ClangSharp.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/ClangSharp.Interop.dll": {}
+        }
+      },
+      "IndexRange/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/IndexRange.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/IndexRange.dll": {}
+        }
+      },
+      "IsExternalInit/1.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        }
+      },
+      "libclang/13.0.1": {
+        "type": "package"
+      },
+      "libClangSharp/13.0.0-beta1": {
+        "type": "package"
+      },
+      "libLLVM/13.0.0": {
+        "type": "package"
+      },
+      "LLVMSharp/13.0.0-beta2": {
+        "type": "package",
+        "dependencies": {
+          "LLVMSharp.Interop": "13.0.0-beta2",
+          "libLLVM": "13.0.0"
+        },
+        "compile": {
+          "lib/net6.0/LLVMSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/LLVMSharp.dll": {}
+        }
+      },
+      "LLVMSharp.Interop/13.0.0-beta2": {
+        "type": "package",
+        "dependencies": {
+          "libLLVM": "13.0.0"
+        },
+        "compile": {
+          "lib/net6.0/LLVMSharp.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/LLVMSharp.Interop.dll": {}
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.1.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
+        }
+      },
+      "Mono.Cecil/0.11.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Nullable/1.3.0": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/net5.0/_._": {
+            "buildAction": "None",
+            "codeLanguage": "cs",
+            "copyToOutput": false
+          }
+        }
+      },
+      "System.Memory/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "Yoakke.Collections/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.Collections.dll": {}
+        }
+      },
+      "Yoakke.Polyfill/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "IndexRange": "1.0.0",
+          "IsExternalInit": "1.0.1",
+          "Microsoft.Bcl.HashCode": "1.1.1",
+          "Nullable": "1.3.0",
+          "System.Memory": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.Polyfill.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.Polyfill.dll": {}
+        }
+      },
+      "Yoakke.Streams/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Collections": "2022.2.16-2.29.53-nightly",
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.Streams.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.Streams.dll": {}
+        }
+      },
+      "Yoakke.SynKit.Lexer/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Collections": "2022.2.16-2.29.53-nightly",
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly",
+          "Yoakke.Streams": "2022.2.16-2.29.53-nightly",
+          "Yoakke.SynKit.Text": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.SynKit.Lexer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.SynKit.Lexer.dll": {}
+        }
+      },
+      "Yoakke.SynKit.Lexer.Generator/2022.2.16-2.29.53-nightly": {
+        "type": "package"
+      },
+      "Yoakke.SynKit.Parser/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.SynKit.Lexer": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.SynKit.Parser.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.SynKit.Parser.dll": {}
+        }
+      },
+      "Yoakke.SynKit.Parser.Generator/2022.2.16-2.29.53-nightly": {
+        "type": "package"
+      },
+      "Yoakke.SynKit.Text/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.SynKit.Text.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.SynKit.Text.dll": {}
+        }
+      }
+    },
+    "net6.0/linux-x64": {
+      "ClangSharp/13.0.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "ClangSharp.Interop": "13.0.0-beta1"
+        },
+        "compile": {
+          "lib/net6.0/ClangSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/ClangSharp.dll": {}
+        }
+      },
+      "ClangSharp.Interop/13.0.0-beta1": {
+        "type": "package",
+        "dependencies": {
+          "libClang": "13.0.1",
+          "libClangSharp": "13.0.0-beta1"
+        },
+        "compile": {
+          "lib/net6.0/ClangSharp.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/ClangSharp.Interop.dll": {}
+        }
+      },
+      "IndexRange/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/IndexRange.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/IndexRange.dll": {}
+        }
+      },
+      "IsExternalInit/1.0.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        }
+      },
+      "libclang/13.0.1": {
+        "type": "package"
+      },
+      "libClangSharp/13.0.0-beta1": {
+        "type": "package"
+      },
+      "libLLVM/13.0.0": {
+        "type": "package"
+      },
+      "LLVMSharp/13.0.0-beta2": {
+        "type": "package",
+        "dependencies": {
+          "LLVMSharp.Interop": "13.0.0-beta2",
+          "libLLVM": "13.0.0"
+        },
+        "compile": {
+          "lib/net6.0/LLVMSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/LLVMSharp.dll": {}
+        }
+      },
+      "LLVMSharp.Interop/13.0.0-beta2": {
+        "type": "package",
+        "dependencies": {
+          "libLLVM": "13.0.0"
+        },
+        "compile": {
+          "lib/net6.0/LLVMSharp.Interop.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/LLVMSharp.Interop.dll": {}
+        }
+      },
+      "Microsoft.Bcl.HashCode/1.1.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
+        }
+      },
+      "Mono.Cecil/0.11.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {},
+          "lib/netstandard2.0/Mono.Cecil.dll": {}
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Nullable/1.3.0": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/net5.0/_._": {
+            "buildAction": "None",
+            "codeLanguage": "cs",
+            "copyToOutput": false
+          }
+        }
+      },
+      "System.Memory/4.5.4": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "Yoakke.Collections/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.Collections.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.Collections.dll": {}
+        }
+      },
+      "Yoakke.Polyfill/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "IndexRange": "1.0.0",
+          "IsExternalInit": "1.0.1",
+          "Microsoft.Bcl.HashCode": "1.1.1",
+          "Nullable": "1.3.0",
+          "System.Memory": "4.5.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.Polyfill.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.Polyfill.dll": {}
+        }
+      },
+      "Yoakke.Streams/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Collections": "2022.2.16-2.29.53-nightly",
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.Streams.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.Streams.dll": {}
+        }
+      },
+      "Yoakke.SynKit.Lexer/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Collections": "2022.2.16-2.29.53-nightly",
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly",
+          "Yoakke.Streams": "2022.2.16-2.29.53-nightly",
+          "Yoakke.SynKit.Text": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.SynKit.Lexer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.SynKit.Lexer.dll": {}
+        }
+      },
+      "Yoakke.SynKit.Lexer.Generator/2022.2.16-2.29.53-nightly": {
+        "type": "package"
+      },
+      "Yoakke.SynKit.Parser/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.SynKit.Lexer": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.SynKit.Parser.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.SynKit.Parser.dll": {}
+        }
+      },
+      "Yoakke.SynKit.Parser.Generator/2022.2.16-2.29.53-nightly": {
+        "type": "package"
+      },
+      "Yoakke.SynKit.Text/2022.2.16-2.29.53-nightly": {
+        "type": "package",
+        "dependencies": {
+          "Yoakke.Polyfill": "2022.2.16-2.29.53-nightly"
+        },
+        "compile": {
+          "lib/netstandard2.0/Yoakke.SynKit.Text.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yoakke.SynKit.Text.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClangSharp/13.0.0-beta1": {
+      "sha512": "L22V78SIdeNFk9lebA6/Kbt461Noi3arwFoYhHvVxh4HvH48WvSr/72xcEApVhjqeTyvybJvvj6LI/2hyLYOUw==",
+      "type": "package",
+      "path": "clangsharp/13.0.0-beta1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "clangsharp.13.0.0-beta1.nupkg.sha512",
+        "clangsharp.nuspec",
+        "lib/net6.0/ClangSharp.dll",
+        "lib/netstandard2.0/ClangSharp.dll"
+      ]
+    },
+    "ClangSharp.Interop/13.0.0-beta1": {
+      "sha512": "hVl1On7q+Snjd8AFJcOn+mwuXjqZ+E6HBuvq+AcH/ujoWrDxIhyNwgV9RBPNwQ7N9X5EP/oVS25cvtav9EGuIA==",
+      "type": "package",
+      "path": "clangsharp.interop/13.0.0-beta1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "clangsharp.interop.13.0.0-beta1.nupkg.sha512",
+        "clangsharp.interop.nuspec",
+        "lib/net6.0/ClangSharp.Interop.dll",
+        "lib/netstandard2.0/ClangSharp.Interop.dll"
+      ]
+    },
+    "IndexRange/1.0.0": {
+      "sha512": "6TgS1JLSUkpmPLfXBPaAgB39ZUix8E4soXWk2XSDcscVe84i1JKzIAtA7jHbRHSkOOrcr6YA0MpLCeq98y9mYQ==",
+      "type": "package",
+      "path": "indexrange/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "indexrange.1.0.0.nupkg.sha512",
+        "indexrange.nuspec",
+        "lib/net45/IndexRange.dll",
+        "lib/net471/IndexRange.dll",
+        "lib/netstandard2.0/IndexRange.dll",
+        "lib/netstandard2.1/IndexRange.dll"
+      ]
+    },
+    "IsExternalInit/1.0.1": {
+      "sha512": "Md/buF2kqLI/bvmqEwtsCGXKmgbZBzJRW1vz38lyTZKjP4YMXOOSATOSbWg2+S+tlRbrM/8qp9qOBDtqLHBgBw==",
+      "type": "package",
+      "path": "isexternalinit/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net20/IsExternalInit.targets",
+        "build/net40/IsExternalInit.targets",
+        "build/netstandard1.0/IsExternalInit.targets",
+        "build/netstandard2.0/IsExternalInit.targets",
+        "content/net20/IsExternalInit/IsExternalInit.cs.pp",
+        "content/net40/IsExternalInit/IsExternalInit.cs.pp",
+        "content/net5.0/IsExternalInit/IsExternalInit.cs.pp",
+        "content/netstandard1.0/IsExternalInit/IsExternalInit.cs.pp",
+        "content/netstandard2.0/IsExternalInit/IsExternalInit.cs.pp",
+        "contentFiles/cs/net20/IsExternalInit/IsExternalInit.cs.pp",
+        "contentFiles/cs/net40/IsExternalInit/IsExternalInit.cs.pp",
+        "contentFiles/cs/net5.0/IsExternalInit/IsExternalInit.cs.pp",
+        "contentFiles/cs/netstandard1.0/IsExternalInit/IsExternalInit.cs.pp",
+        "contentFiles/cs/netstandard2.0/IsExternalInit/IsExternalInit.cs.pp",
+        "icon.png",
+        "isexternalinit.1.0.1.nupkg.sha512",
+        "isexternalinit.nuspec"
+      ]
+    },
+    "libclang/13.0.1": {
+      "sha512": "dp72xfe8BcV1T+yTc4VWrRi+iBjOANJkEXqLF2sPWrI0ZMGEWXTYH/7oK1REfHhecMwf1hkcyoo5lx9FLvvg4A==",
+      "type": "package",
+      "path": "libclang/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "libclang.13.0.1.nupkg.sha512",
+        "libclang.nuspec",
+        "runtime.json"
+      ]
+    },
+    "libClangSharp/13.0.0-beta1": {
+      "sha512": "xani8/ZU3sdIkNrOd9n59Bq8OlFTNYv5jdt5nGoZcfDLt1mca5NcUpzKfJTFBMlzlPlPXFh8J+rH11f5udCcmg==",
+      "type": "package",
+      "path": "libclangsharp/13.0.0-beta1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "NOTICE.TXT",
+        "libclangsharp.13.0.0-beta1.nupkg.sha512",
+        "libclangsharp.nuspec",
+        "runtime.json"
+      ]
+    },
+    "libLLVM/13.0.0": {
+      "sha512": "qiA48wVpe4hvBQgHuwyCtecu7oowTP/hVmxiXB8CzQDUQbXbtMNqzca17opei3JGmQz7yBHGdVGndxWf4/CxVA==",
+      "type": "package",
+      "path": "libllvm/13.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "libllvm.13.0.0.nupkg.sha512",
+        "libllvm.nuspec",
+        "runtime.json"
+      ]
+    },
+    "LLVMSharp/13.0.0-beta2": {
+      "sha512": "RND8HnrHNXyXzxohzR4tAE3MbmZkYryldMmSN5QtW0gpiKw/FUymDf9nAPr3M4kC7bu99bZRsDg8dYsnsMsSSQ==",
+      "type": "package",
+      "path": "llvmsharp/13.0.0-beta2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/LLVMSharp.dll",
+        "lib/netstandard2.0/LLVMSharp.dll",
+        "llvmsharp.13.0.0-beta2.nupkg.sha512",
+        "llvmsharp.nuspec"
+      ]
+    },
+    "LLVMSharp.Interop/13.0.0-beta2": {
+      "sha512": "eypX+kpzo0Hszu1DcaCzqsKrCIGU1r4ec38Q/sS4U2TcPew7VK7sZy7WxjAu5wp79Sc539Urj6c2MLAbV17bCw==",
+      "type": "package",
+      "path": "llvmsharp.interop/13.0.0-beta2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/LLVMSharp.Interop.dll",
+        "lib/netstandard2.0/LLVMSharp.Interop.dll",
+        "llvmsharp.interop.13.0.0-beta2.nupkg.sha512",
+        "llvmsharp.interop.nuspec"
+      ]
+    },
+    "Microsoft.Bcl.HashCode/1.1.1": {
+      "sha512": "MalY0Y/uM/LjXtHfX/26l2VtN4LDNZ2OE3aumNOHDLsT4fNYy2hiHXI4CXCqKpNUNm7iJ2brrc4J89UdaL56FA==",
+      "type": "package",
+      "path": "microsoft.bcl.hashcode/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.HashCode.dll",
+        "lib/net461/Microsoft.Bcl.HashCode.xml",
+        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
+        "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.HashCode.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.HashCode.xml",
+        "microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
+        "microsoft.bcl.hashcode.nuspec",
+        "ref/net461/Microsoft.Bcl.HashCode.dll",
+        "ref/netcoreapp2.1/Microsoft.Bcl.HashCode.dll",
+        "ref/netstandard2.0/Microsoft.Bcl.HashCode.dll",
+        "ref/netstandard2.1/Microsoft.Bcl.HashCode.dll",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Mono.Cecil/0.11.4": {
+      "sha512": "IC1h5g0NeJGHIUgzM1P82ld57knhP0IcQfrYITDPXlNpMYGUrsG5TxuaWTjaeqDNQMBDNZkB8L0rBnwsY6JHuQ==",
+      "type": "package",
+      "path": "mono.cecil/0.11.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Mono.Cecil.Mdb.dll",
+        "lib/net40/Mono.Cecil.Mdb.pdb",
+        "lib/net40/Mono.Cecil.Pdb.dll",
+        "lib/net40/Mono.Cecil.Pdb.pdb",
+        "lib/net40/Mono.Cecil.Rocks.dll",
+        "lib/net40/Mono.Cecil.Rocks.pdb",
+        "lib/net40/Mono.Cecil.dll",
+        "lib/net40/Mono.Cecil.pdb",
+        "lib/netstandard2.0/Mono.Cecil.Mdb.dll",
+        "lib/netstandard2.0/Mono.Cecil.Mdb.pdb",
+        "lib/netstandard2.0/Mono.Cecil.Pdb.dll",
+        "lib/netstandard2.0/Mono.Cecil.Pdb.pdb",
+        "lib/netstandard2.0/Mono.Cecil.Rocks.dll",
+        "lib/netstandard2.0/Mono.Cecil.Rocks.pdb",
+        "lib/netstandard2.0/Mono.Cecil.dll",
+        "lib/netstandard2.0/Mono.Cecil.pdb",
+        "mono.cecil.0.11.4.nupkg.sha512",
+        "mono.cecil.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Nullable/1.3.0": {
+      "sha512": "xHAviTdTY3n+t1nEPN4JPRQR5lI124qRKVw+U9H7dO5sDNPpzoWeo/MQy7dSUmv9eD3k/CJVKokz1tFK+JOzRw==",
+      "type": "package",
+      "path": "nullable/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/net20/Nullable/AllowNullAttribute.cs.pp",
+        "content/net20/Nullable/DisallowNullAttribute.cs.pp",
+        "content/net20/Nullable/DoesNotReturnAttribute.cs.pp",
+        "content/net20/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "content/net20/Nullable/MaybeNullAttribute.cs.pp",
+        "content/net20/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "content/net20/Nullable/MemberNotNullAttribute.cs.pp",
+        "content/net20/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "content/net20/Nullable/NotNullAttribute.cs.pp",
+        "content/net20/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "content/net20/Nullable/NotNullWhenAttribute.cs.pp",
+        "content/net40/Nullable/AllowNullAttribute.cs.pp",
+        "content/net40/Nullable/DisallowNullAttribute.cs.pp",
+        "content/net40/Nullable/DoesNotReturnAttribute.cs.pp",
+        "content/net40/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "content/net40/Nullable/MaybeNullAttribute.cs.pp",
+        "content/net40/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "content/net40/Nullable/MemberNotNullAttribute.cs.pp",
+        "content/net40/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "content/net40/Nullable/NotNullAttribute.cs.pp",
+        "content/net40/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "content/net40/Nullable/NotNullWhenAttribute.cs.pp",
+        "content/net5.0/_._",
+        "content/netstandard1.0/Nullable/AllowNullAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/DisallowNullAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/DoesNotReturnAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/MaybeNullAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/MemberNotNullAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/NotNullAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "content/netstandard1.0/Nullable/NotNullWhenAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/AllowNullAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/DisallowNullAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/DoesNotReturnAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/MaybeNullAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/MemberNotNullAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/NotNullAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "content/netstandard2.0/Nullable/NotNullWhenAttribute.cs.pp",
+        "content/netstandard2.1/Nullable/MemberNotNullAttribute.cs.pp",
+        "content/netstandard2.1/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/AllowNullAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/DisallowNullAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/DoesNotReturnAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/MaybeNullAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/MemberNotNullAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/NotNullAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "contentFiles/cs/net20/Nullable/NotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/AllowNullAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/DisallowNullAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/DoesNotReturnAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/MaybeNullAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/MemberNotNullAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/NotNullAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "contentFiles/cs/net40/Nullable/NotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/net5.0/_._",
+        "contentFiles/cs/netstandard1.0/Nullable/AllowNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/DisallowNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/DoesNotReturnAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/MaybeNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/MemberNotNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/NotNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard1.0/Nullable/NotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/AllowNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/DisallowNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/DoesNotReturnAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/DoesNotReturnIfAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/MaybeNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/MaybeNullWhenAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/MemberNotNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/NotNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/NotNullIfNotNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.0/Nullable/NotNullWhenAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.1/Nullable/MemberNotNullAttribute.cs.pp",
+        "contentFiles/cs/netstandard2.1/Nullable/MemberNotNullWhenAttribute.cs.pp",
+        "icon.png",
+        "nullable.1.3.0.nupkg.sha512",
+        "nullable.nuspec"
+      ]
+    },
+    "System.Memory/4.5.4": {
+      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "type": "package",
+      "path": "system.memory/4.5.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Memory.dll",
+        "lib/net461/System.Memory.xml",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.4.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Yoakke.Collections/2022.2.16-2.29.53-nightly": {
+      "sha512": "v5dEccIuB/awaPxLmLPgXmDOKRIKPE0yAjOSS3v2zQAfH93jbd/aGuJtq/3g+tomVMCAOIvjyT0nr1FoRSOtjA==",
+      "type": "package",
+      "path": "yoakke.collections/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "lib/netstandard2.0/Yoakke.Collections.dll",
+        "lib/netstandard2.0/Yoakke.Collections.xml",
+        "yoakke.collections.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.collections.nuspec"
+      ]
+    },
+    "Yoakke.Polyfill/2022.2.16-2.29.53-nightly": {
+      "sha512": "edLpdEwX9vED2u9rn6C9lA3z87BEKfAoOTIHiE1NDKoh/1ktA5ngEtCBWZvLsl0AxiJTyD78OJ6cdE52DK7W/A==",
+      "type": "package",
+      "path": "yoakke.polyfill/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "lib/netstandard2.0/Yoakke.Polyfill.dll",
+        "lib/netstandard2.0/Yoakke.Polyfill.xml",
+        "yoakke.polyfill.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.polyfill.nuspec"
+      ]
+    },
+    "Yoakke.Streams/2022.2.16-2.29.53-nightly": {
+      "sha512": "+/YCsc6GnB8htltBSM2NIiSsKnxSj8E40ADTJEMythew+ENj8L8VJ/ZYPFNXHY5Ha9G08ShJkhbw18t1nxFOVg==",
+      "type": "package",
+      "path": "yoakke.streams/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "lib/netstandard2.0/Yoakke.Streams.dll",
+        "lib/netstandard2.0/Yoakke.Streams.xml",
+        "yoakke.streams.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.streams.nuspec"
+      ]
+    },
+    "Yoakke.SynKit.Lexer/2022.2.16-2.29.53-nightly": {
+      "sha512": "HaQIm5CakjotTmwfYzhv3q5B15guCzhqzZ26QUfXyjhUJD+0II5s3VE8cCUhvZq1s+PGrANZTA3o3Vpop0Kp0w==",
+      "type": "package",
+      "path": "yoakke.synkit.lexer/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "lib/netstandard2.0/Yoakke.SynKit.Lexer.dll",
+        "lib/netstandard2.0/Yoakke.SynKit.Lexer.xml",
+        "yoakke.synkit.lexer.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.synkit.lexer.nuspec"
+      ]
+    },
+    "Yoakke.SynKit.Lexer.Generator/2022.2.16-2.29.53-nightly": {
+      "sha512": "YJ2/NQ0if+Shed3IN0KiXZ/TJZMfo51LE1Epievy6E7GAtpwpQS3JNE1M3gderEDximSQNMsNnwTj/HD2RozfQ==",
+      "type": "package",
+      "path": "yoakke.synkit.lexer.generator/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "analyzers/dotnet/cs/IndexRange.dll",
+        "analyzers/dotnet/cs/Microsoft.Bcl.HashCode.dll",
+        "analyzers/dotnet/cs/Scriban.dll",
+        "analyzers/dotnet/cs/System.Memory.dll",
+        "analyzers/dotnet/cs/Yoakke.SynKit.Lexer.Generator.dll",
+        "yoakke.synkit.lexer.generator.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.synkit.lexer.generator.nuspec"
+      ]
+    },
+    "Yoakke.SynKit.Parser/2022.2.16-2.29.53-nightly": {
+      "sha512": "yXVSQ3iZTd2yfmLOBO+EhMNqZWttXKg3ZLkpFsA109XXGw/4VlwCqt3jXYGrHqY3gdPK081k7e8QzrpqWpyJ2A==",
+      "type": "package",
+      "path": "yoakke.synkit.parser/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "lib/netstandard2.0/Yoakke.SynKit.Parser.dll",
+        "lib/netstandard2.0/Yoakke.SynKit.Parser.xml",
+        "yoakke.synkit.parser.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.synkit.parser.nuspec"
+      ]
+    },
+    "Yoakke.SynKit.Parser.Generator/2022.2.16-2.29.53-nightly": {
+      "sha512": "Ird4QFVYOY7F9iI1hfaqRmhxgR+D+9Y5O3A+PqRXgoSA0/ulQQq9/n2HvOdGsPG0i72A8h3QVHZgqdd08XxMqw==",
+      "type": "package",
+      "path": "yoakke.synkit.parser.generator/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "analyzers/dotnet/cs/IndexRange.dll",
+        "analyzers/dotnet/cs/Microsoft.Bcl.HashCode.dll",
+        "analyzers/dotnet/cs/Scriban.dll",
+        "analyzers/dotnet/cs/System.Memory.dll",
+        "analyzers/dotnet/cs/Yoakke.SynKit.Parser.Generator.dll",
+        "yoakke.synkit.parser.generator.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.synkit.parser.generator.nuspec"
+      ]
+    },
+    "Yoakke.SynKit.Text/2022.2.16-2.29.53-nightly": {
+      "sha512": "sNRbFd9s9GEkfblu9/XTGlIvWd548A7CTpIFfM9hq9k1skmXn4WfV6Z9rup0gTJaLfFP2W4gIETCgrWRYbTN+Q==",
+      "type": "package",
+      "path": "yoakke.synkit.text/2022.2.16-2.29.53-nightly",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "YoakkeLogo.png",
+        "lib/netstandard2.0/Yoakke.SynKit.Text.dll",
+        "lib/netstandard2.0/Yoakke.SynKit.Text.xml",
+        "yoakke.synkit.text.2022.2.16-2.29.53-nightly.nupkg.sha512",
+        "yoakke.synkit.text.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "ClangSharp >= 13.0.0-beta1",
+      "LLVMSharp >= 13.0.0-beta2",
+      "Mono.Cecil >= 0.11.4",
+      "Newtonsoft.JSON >= 13.0.1",
+      "Yoakke.SynKit.Lexer >= 2022.2.16-2.29.53-nightly",
+      "Yoakke.SynKit.Lexer.Generator >= 2022.2.16-2.29.53-nightly",
+      "Yoakke.SynKit.Parser >= 2022.2.16-2.29.53-nightly",
+      "Yoakke.SynKit.Parser.Generator >= 2022.2.16-2.29.53-nightly",
+      "libLLVM >= 13.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\bitte\\.nuget\\packages\\": {},
+    "D:\\VS2022SHRDINS\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\Scythe.csproj",
+      "projectName": "Scythe",
+      "projectPath": "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\Scythe.csproj",
+      "packagesPath": "C:\\Users\\bitte\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bitte\\source\\repos\\Scythe\\Scythe\\obj\\publish\\linux-x64\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\VS2022SHRDINS\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\bitte\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Users\\bitte\\AppData\\Roaming\\Cosmos User Kit\\packages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "dependencies": {
+          "ClangSharp": {
+            "target": "Package",
+            "version": "[13.0.0-beta1, )"
+          },
+          "LLVMSharp": {
+            "target": "Package",
+            "version": "[13.0.0-beta2, )"
+          },
+          "Mono.Cecil": {
+            "target": "Package",
+            "version": "[0.11.4, )"
+          },
+          "Newtonsoft.JSON": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
+          "Yoakke.SynKit.Lexer": {
+            "target": "Package",
+            "version": "[2022.2.16-2.29.53-nightly, )"
+          },
+          "Yoakke.SynKit.Lexer.Generator": {
+            "target": "Package",
+            "version": "[2022.2.16-2.29.53-nightly, )"
+          },
+          "Yoakke.SynKit.Parser": {
+            "target": "Package",
+            "version": "[2022.2.16-2.29.53-nightly, )"
+          },
+          "Yoakke.SynKit.Parser.Generator": {
+            "target": "Package",
+            "version": "[2022.2.16-2.29.53-nightly, )"
+          },
+          "libLLVM": {
+            "target": "Package",
+            "version": "[13.0.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+            "version": "[6.0.6, 6.0.6]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[6.0.6, 6.0.6]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+            "version": "[6.0.6, 6.0.6]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
+      }
+    }
+  }
+}
