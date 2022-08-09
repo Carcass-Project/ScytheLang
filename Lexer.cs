@@ -76,6 +76,7 @@ namespace Scythe
         [Token("]")] BracketClose,
         [Token("{")] CurlyOpen,
         [Token("}")] CurlyClose,
+        [Ignore][Token(";")] Semicolon
     }
 
     [Lexer(typeof(TokenType))]

@@ -1,5 +1,0 @@
-C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\linux-x64\publish\Scythe.pdb
-C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\linux-x64\publish\packagetest.sy
-C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\linux-x64\publish\test.sy
-C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\linux-x64\publish\Scythe.xml
-C:\Users\bitte\source\repos\Scythe\Scythe\bin\Release\net6.0\linux-x64\publish\Scythe
