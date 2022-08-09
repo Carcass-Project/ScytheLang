@@ -1,6 +1,4 @@
-﻿fn main() -> int
+﻿fn main() -> void
 {
 	print("i")
-
-	return 1
 }
